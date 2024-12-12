@@ -1,0 +1,40 @@
+.navbar {
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar .nav-link {
+    color: #fff;
+    transition: color 0.3s;
+  }
+  
+  .navbar .nav-link:hover {
+    color: #f8f9fa;
+  }
+  
+  .dropdown-menu {
+    background-color: white;
+    color:  #343a40;
+  }
+  
+  .dropdown-menu .dropdown-item {
+    color: #343a40;
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+    background-color: #495057;
+    color: #fff;
+  }
+  
+  .navbar .badge {
+    position: absolute;
+    top: 4px;
+    right: 11px;
+    font-size: 0.7rem;
+    padding: 0.3em 0.5em;
+    border-radius: 50%;
+  }
+  
+  .navbar .dropdown-menu {
+    min-width: 250px;
+  }
+  

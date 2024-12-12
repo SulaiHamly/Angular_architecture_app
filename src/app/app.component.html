@@ -1,0 +1,17 @@
+
+    <div *ngIf="isAuthPage(); else mainLayout">
+      <router-outlet></router-outlet>
+    </div>
+    
+    <ng-template #mainLayout>
+
+        <app-navbar></app-navbar>
+          <app-sidemenu></app-sidemenu>
+          <div id="main-content" class="container mt-4 main-content">
+            <router-outlet></router-outlet>
+          </div>
+        
+    </ng-template>
+    
+
+
