@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
@@ -10,22 +10,22 @@ import Swal from 'sweetalert2';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   contactForm!: FormGroup;
 
-  constructor( private router: Router) {
-    // Initialize the form group with form controls and validation
-    this.contactForm = new FormGroup({
-      name: new FormControl('', [Validators.required]), // Email format validation
-      email: new FormControl('', [Validators.required, Validators.email]),// Min length validation
-      message: new FormControl('', [Validators.required]),
-    });
+  constructor( private router: Router, private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.contactForm = this.formBuilder.group({
+      name: ['', [Validators.required]], 
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required]],
+    })  
   }
 
 
   onSubmit() {
     if (this.contactForm.valid) {
-      // Show success alert
       Swal.fire({
         icon: 'success',
         title: 'Message Sent!',
@@ -36,7 +36,6 @@ export class ContactComponent {
           this.contactForm.reset();
       });
     } else {
-      // Show error alert
       Swal.fire({
         icon: 'error',
         title: 'Oops!',

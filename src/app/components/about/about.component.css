@@ -1,77 +1,52 @@
-/* About Page Custom Styles */
 .about-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .about-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Section Styling */
-  .about-section {
-    margin-top: 50px;
-    padding: 30px;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Title, Text, and Heading Styles */
-  .about-section h2 {
-    font-size: 2rem;
-    color: #343a40;
-  }
-  
-  .about-section p {
-    font-size: 1.1rem;
-    color: #6c757d;
-    line-height: 1.6;
-  }
-  
-  .about-section h4 {
-    font-size: 1.3rem;
-    color: #495057;
-    margin-top: 20px;
-  }
-  
-  .about-section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .about-section ul li {
-    font-size: 1.1rem;
-    color: #6c757d;
-    margin-bottom: 10px;
-  }
-  
-  /* Responsive Design for Mobile */
-  @media (max-width: 767px) {
-    .about-title {
-        font-size: 2rem;
-    }
-  
-    .about-section {
-        padding: 20px;
-    }
-  
-    /* Image adjustments */
-    .about-image img {
-        border-radius: 10px;
-    }
-  
-    /* List item adjustments */
-    .about-section ul li {
-        font-size: 1rem;
-    }
-  
-    .about-section p {
-        font-size: 1rem;
-    }
-  }
-  
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--heading-color); /* Use heading color based on theme */
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-section {
+  margin-top: 50px;
+  padding: 30px;
+  background-color: var(--background-color); /* Use background color based on theme */
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: var(--heading-color); /* Use heading color based on theme */
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: var(--text-color); /* Use text color based on theme */
+  line-height: 1.6;
+}
+
+.about-section h4 {
+  font-size: 1.3rem;
+  color: var(--subheading-color); /* Use subheading color based on theme */
+  margin-top: 20px;
+}
+
+.about-section ul li {
+  font-size: 1.1rem;
+  color: var(--text-color); /* Use text color based on theme */
+  margin-bottom: 10px;
+}
+
+.container{
+  background-color: var(--background-color);
+}
+
+h4{
+  color:var(--text-color);
+}

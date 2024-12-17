@@ -34,3 +34,80 @@
     background-color: rgba(0, 0, 0, 0.5); /* Dim background */
   }
   
+
+  /* Global Light Mode Styles */
+/* Global Variables */
+
+body {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: auto;
+}
+
+.card {
+  background-color: var(--card-bg-color);
+  transition: background-color 0.3s ease;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  --primary-bg-color: #ffffff;
+  --primary-text-color: #000000;
+  --card-bg-color: #f7f7f7;
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --heading-color: #343a40;
+  --subheading-color: #495057;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --heading-color: #e0e0e0;
+  --subheading-color: #b0b0b0;
+  --primary-bg-color: #121212;
+  --primary-text-color: #e0e0e0;
+  --card-bg-color: #1e1e1e;
+}
+
+/* General Body Styling */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* General Element Styles (cards, inputs, buttons, etc.) */
+.card, .btn, .form-control {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+}
+
+/* For links and other highlighted text */
+a {
+  color: var(--text-color);
+}
+
+
+body.dark-mode .about-section {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+
+body.dark-mode .about-title {
+  color: var(--heading-color) !important;
+}
+p{
+  color:var(--text-color);
+}
+
+h4{
+  color:var(--text-color);
+}
+
+li{
+  color:var(--text-color);
+}
