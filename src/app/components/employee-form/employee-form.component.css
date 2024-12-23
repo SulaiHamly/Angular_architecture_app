@@ -1,0 +1,14 @@
+/* Add this in the component's CSS or global stylesheet */
+.text-danger {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: red;
+  }
+  
+  input.ng-touched.ng-invalid {
+    border-color: red;
+  }
+  
+  /* .modal-body{
+    background-color: var(--card-bg-color);
+  } */

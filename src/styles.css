@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
 .container {
     display: flex;
     flex-direction: column;
@@ -110,4 +112,15 @@ h4{
 
 li{
   color:var(--text-color);
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.card, .btn, .form-control {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  border: 1px solid var(--primary-text-color);
+}
+.table th, .table td {
+  background-color: var(--primary-bg-color) !important;
+  color: var(--primary-text-color) !important;
 }

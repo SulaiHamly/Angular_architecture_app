@@ -1,0 +1,23 @@
+/* Custom styles for the employee list table */
+.table th, .table td {
+    vertical-align: middle; /* Vertically center the text in each cell */
+  }
+  
+  .table th {
+    text-align: center; /* Center-align the table headers */
+  }
+  
+  .table td {
+    text-align: center; /* Center-align the table data */
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f1f1f1; /* Light gray hover effect */
+  }
+  
+  h2 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #333; /* Dark text color for the title */
+  }
+  

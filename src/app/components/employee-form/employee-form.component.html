@@ -1,0 +1,82 @@
+<div class="modal-header">
+    <h4 class="modal-title">Add New Employee</h4>
+    <button type="button" class="close" (click)="cancel()">
+      <span>&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <!-- Name Field -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="name"
+          placeholder="Enter name"
+        />
+        <div *ngIf="employeeForm.controls['name'].touched && employeeForm.controls['name'].invalid" class="text-danger">
+          <div *ngIf="employeeForm.controls['name'].hasError('required')">Name is required.</div>
+          <div *ngIf="employeeForm.controls['name'].hasError('minlength')">Name must be at least 3 characters long.</div>
+        </div>
+      </div>
+  
+      <!-- Position Field -->
+      <div class="mb-3">
+        <label for="position" class="form-label">Position</label>
+        <input
+          type="text"
+          id="position"
+          class="form-control"
+          formControlName="position"
+          placeholder="Enter position"
+        />
+        <div *ngIf="employeeForm.controls['position'].touched && employeeForm.controls['position'].invalid" class="text-danger">
+          <div *ngIf="employeeForm.controls['position'].hasError('required')">Position is required.</div>
+          <div *ngIf="employeeForm.controls['position'].hasError('minlength')">Position must be at least 3 characters long.</div>
+        </div>
+      </div>
+  
+      <!-- Department Field -->
+      <div class="mb-3">
+        <label for="department" class="form-label">Department</label>
+        <input
+          type="text"
+          id="department"
+          class="form-control"
+          formControlName="department"
+          placeholder="Enter department"
+        />
+        <div *ngIf="employeeForm.controls['department'].touched && employeeForm.controls['department'].invalid" class="text-danger">
+          <div *ngIf="employeeForm.controls['department'].hasError('required')">Department is required.</div>
+          <!-- <div *ngIf="employeeForm.controls['department'].hasError('minlength')">Department must be at least 15 characters long.</div> -->
+        </div>
+      </div>
+  
+      <!-- Salary Field -->
+      <div class="mb-3">
+        <label for="salary" class="form-label">Salary</label>
+        <input
+          type="number"
+          id="salary"
+          class="form-control"
+          formControlName="salary"
+          placeholder="Enter salary"
+        />
+        <div *ngIf="employeeForm.controls['salary'].touched && employeeForm.controls['salary'].invalid" class="text-danger">
+          <div *ngIf="employeeForm.controls['salary'].hasError('required')">Salary is required.</div>
+          <div *ngIf="employeeForm.controls['salary'].hasError('pattern')">Salary must be a valid number.</div>
+        </div>
+      </div>
+  
+      <!-- Submit and Cancel buttons -->
+      <button type="submit" class="btn btn-success" [disabled]="!employeeForm.valid">
+        Add Employee
+      </button>
+      <button type="button" class="btn btn-secondary ms-2" (click)="cancel()">
+        Cancel
+      </button>
+    </form>
+  </div>
+  

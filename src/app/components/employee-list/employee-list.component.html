@@ -1,0 +1,61 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="mb-4 text-center">Employee List</h2>
+    </div>
+  </div>
+
+  <!-- Search Box -->
+  <div class="row mb-4">
+    <div class="col-3">
+      <form [formGroup]="searchForm">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search"
+          formControlName="search"
+          (input)="filterEmployees()"
+        />
+      </form>
+    </div>
+    <div class="col-9 text-end">
+      <button (click)="openEmployeeForm()" class="btn btn-primary">
+        Add New Employee
+      </button>
+    </div>
+  </div>
+
+  <!-- Employee Table -->
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+      <thead class="bg-info text-white">
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Department</th>
+          <th>Salary</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Iterate over filteredEmployees instead of employees -->
+        <tr *ngFor="let employee of filteredEmployees">
+          <td>{{ employee.sNo }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.position }}</td>
+          <td>{{ employee.department }}</td>
+          <td>{{ employee.salary }}</td>
+          <td>
+            <button (click)="editEmployee(employee)" class="btn btn-warning btn-sm me-2">
+              Edit
+            </button>
+            <button (click)="deleteEmployee(employee)" class="btn btn-danger btn-sm">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
