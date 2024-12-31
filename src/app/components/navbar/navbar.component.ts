@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output, Renderer2 } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
-import { Dropdown } from 'bootstrap';
+import { Dropdown, Offcanvas } from 'bootstrap';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'], // Pluralized to styleUrls
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   @Output() menuToggle = new EventEmitter<void>();
   isDarkMode = false;
   constructor(private router: Router, private renderer: Renderer2) {
@@ -23,7 +23,11 @@ export class NavbarComponent {
   ngOnInit(): void {}
 
   toggleSidebar() {
-    this.menuToggle.emit();
+     const sidebarElement = document.getElementById('sidebar');
+    if (sidebarElement) {
+      const sidebarInstance = new Offcanvas(sidebarElement);
+      sidebarInstance.show();
+    }
   }
 
   onProfileClick() {

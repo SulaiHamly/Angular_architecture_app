@@ -6,24 +6,28 @@
   </div>
 
   <!-- Search Box -->
-  <div class="row mb-4">
-    <div class="col-3">
-      <form [formGroup]="searchForm">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Search"
-          formControlName="search"
-          (input)="filterEmployees()"
-        />
-      </form>
-    </div>
-    <div class="col-9 text-end">
-      <button (click)="openEmployeeForm()" class="btn btn-primary">
-        Add New Employee
-      </button>
-    </div>
+<div class="row mb-4">
+  <div class="col-3">
+    <form [formGroup]="searchForm" class="position-relative">
+      <input
+        type="text"
+        class="form-control ps-4"
+        placeholder="   Search"
+        formControlName="search"
+        (input)="filterEmployees()"
+      />
+      <i
+        class="bi bi-search position-absolute"
+        style="top: 50%; left: 7px; transform: translateY(-50%); color: #6c757d;"
+      ></i>
+    </form>
   </div>
+  <div class="col-9 text-end">
+    <button (click)="openEmployeeForm()" class="btn btn-primary">
+      Add New Employee
+    </button>
+  </div>
+</div>
 
   <!-- Employee Table -->
   <div class="table-responsive">
